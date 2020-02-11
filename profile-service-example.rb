@@ -35,7 +35,7 @@ profile_service = ProfileService.new
 
 profile_name = 'test-profile'
 profile_data = {
-  username: 'myTestUserName',
+  username: 'myTestUserName1',
   password: 'myTestPassword1'
 }
 p = profile_service.add_to_profile(profile_name: profile_name, profile_data: profile_data)
@@ -47,7 +47,7 @@ r = profile_service.release_profile(profile_id: profile_id)
 puts "Response from releasing profile #{r.body}"
 
 # Add two more entries
-p = profile_service.add_to_profile(profile_name: profile_name, profile_data: profile_data)
-p = profile_service.add_to_profile(profile_name: profile_name, profile_data: profile_data)
+p = profile_service.add_to_profile(profile_name: profile_name, profile_data: {username: 'myTestUserName2', password: 'myTestPassword2'})
+p = profile_service.add_to_profile(profile_name: profile_name, profile_data: {username: 'myTestUserName3', password: 'myTestPassword3'})
 
 # ruby profile-service-example.rb
